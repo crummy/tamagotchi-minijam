@@ -35,10 +35,6 @@ Hipstergotchi.Game = function (game) {
     this.hamsterShitting = undefined;
     this.hamsterUnhappy = undefined;
     this.hamsterSleeping = undefined;
-    
-    happyMusic = game.add.audio("happy");
-    unhappyMusic = game.add.audio("unhappy");
-    clubMusic = game.add.audio("clubbing");
 
     //  You can use any of these from any function within this State.
     //  But do consider them as being 'reserved words', i.e. don't create a property for your own game called "world" or you'll over-write the world reference.
@@ -86,6 +82,10 @@ Hipstergotchi.Game.prototype =
         this.hamsterUnhappy.play('anim', 2, true);
         this.hamsterShitting.play('anim', 3, true);
         this.hamsterSleeping.play('anim', 2, true);
+        
+        happyMusic = game.add.audio("happy");
+        unhappyMusic = game.add.audio("unhappy");
+        clubMusic = game.add.audio("clubbing");
     },
 
     update: function () {
