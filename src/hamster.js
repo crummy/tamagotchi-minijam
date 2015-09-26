@@ -20,6 +20,7 @@ function Hamster() {
     this.hunger = 50;
     this.health = this._maxValue;
     this.energy = this._maxValue;
+    this.state = HAPPY_STATE;
     
     this.feed = function(food) {
         if (this.state == DEAD_STATE || this.sadness > 100 || this.hunger == 0) {
@@ -91,9 +92,10 @@ function Hamster() {
         }
         if (this.state == DANCING_STATE) {
             this.energy += this._music.energy;
+            if (this.energy > this._maxValue) this.energy = this._maxValue;
             this.health -= 1;
             this.hunger -= 1;
-            if (this.health > 20 || this.hunger > 20) {
+            if (this.health > 20 && this.hunger > 20) {
                 return DANCING_STATE;
             }
         }
@@ -104,11 +106,13 @@ function Hamster() {
         if (this.energy > this._maxValue) this.energy = this._maxValue;
         
         if (this.hunger >= 100 || this.health == 0) {
+            this.state = DEAD_STATE;
             return DEAD_STATE;
         }
         
         if (this._food > 3) {
             this._food = 0;
+            this.state = SHITTING_STATE;
             return SHITTING_STATE;
         }
         
@@ -118,18 +122,22 @@ function Hamster() {
             } else {
                 this._music = {energy: -5};
             }
+            this.state = DANCING_STATE;
             return DANCING_STATE;
         }
         
         if (this.energy < 15 && Math.random() < 0.1) {
+            this.state = SLEEPING_STATE;
             return SLEEPING_STATE;
         }
         
         if (this.energy < 40
             || this.health < 40
             || this.hunger < 40) {
+                this.state = UNHAPPY_STATE;
                 return UNHAPPY_STATE;
             } else {
+                this.state = HAPPY_STATE;
                 return HAPPY_STATE;
             }
     };
