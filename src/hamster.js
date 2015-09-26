@@ -66,6 +66,7 @@ function Hamster() {
         } else {
             this.state = DANCING_STATE;
             this._music = music;
+            return true;
         }
     };
     
