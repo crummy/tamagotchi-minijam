@@ -42,6 +42,7 @@ Hipstergotchi.Game.prototype =
     create: function () {
         this.game.stage.backgroundColor = '#6688ee';
         this.game.time.events.loop(Phaser.Timer.SECOND, this.tick, this);
+        this.game.add.tileSprite(0, 0, 1000, 600, 'background');
 
         this.hamsterHappy = this.add.sprite(250, 250, 'guineaPigNormal');
         this.hamsterDancing = this.add.sprite(250, 250, 'guineaPigDancing');
