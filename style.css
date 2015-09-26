@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+
 html {
 	
 }
@@ -5,6 +7,8 @@ body {
 
 background: url(graphics/background_grass.png);
 	background-repeat: repeat;
+	font-size: 14px;
+	font-family: 'Press Start 2P', cursive;
 	
 	
 }
@@ -19,7 +23,7 @@ background: url(graphics/background_grass.png);
 #actionBar button{
 	background-repeat: no-repeat;
 	height: 100px;
-	width:6.70%;
+	width:6.40%;
   	margin: 1%;
 	border: 0;
 	background-size: contain;
@@ -39,7 +43,7 @@ background: url(graphics/background_grass.png);
 }
 
 #sleepBnt {
-	background: url(graphics/actions/action_pet.png);
+	background: url(graphics/actions/action_sleep.png);
 
 }
 
