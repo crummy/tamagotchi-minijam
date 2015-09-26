@@ -72,6 +72,7 @@ function Hamster() {
         if (this.state == DEAD_STATE) return false;
         this.energy += 2;
         this.health++;
+        this.state == HAPPY_STATE;
         return true;
     };
     
@@ -83,7 +84,7 @@ function Hamster() {
         if (this.state == SLEEPING_STATE) {
             this.energy += 4;
             this.health += 3;
-            this.hunger -= 2;
+            this.hunger += 2;
             if (this.energy < 100) {
                 return SLEEPING_STATE;
             }
@@ -92,7 +93,7 @@ function Hamster() {
             this.energy += this._music.energy;
             this.health -= 1;
             this.hunger -= 1;
-            if (this.energy > 10 || this.energy < 90) {
+            if (this.health > 20 || this.hunger > 20) {
                 return DANCING_STATE;
             }
         }
