@@ -4,36 +4,55 @@ function Hamster() {
     this.thirst = 0;
     this.food = 0;
     this.sadness = 0;
+    this.isDead = false;
     
     this.feed = function() {
-        this.food += 10;
-        this.hunger -= 10;
-        if (this.hunger < 0) this.hunger = 0;
+        if (this.sadness > 100 || this.hunger == 0) {
+            return false;
+        } else {
+            this.food += 10;
+            this.hunger -= 10;
+            if (this.hunger < 0) this.hunger = 0;
+            return true;
+        }
     }
     
     this.drink = function() {
-        this.drunk += 10;
-        this.thirst -= 10;
+        if (this.sadness > 100) {
+            return false;
+        } else {
+            this.drunk += 10;
+            this.thirst -= 10;
+            return true;
+        }
     }
     
     this.pet = function() {
-        this.sadness--;
+        this.sadness -= 10;
+        return true;
     }
     
     this.slap = function() {
         this.sadness += 10;
+        return true;
     }
     
     this.isUnhappy = function() {
-        
+        return this.hunger > 50
+          || this.drunk > 50
+          || this.thirst > 50
+          || this.sadness > 50;
     }
+   
     
     this.tick = function() {
         this.sadness++;
-        this.hunger += 1;
-        this.thirst += 1;
-        this.drunk -= 1;
+        this.hunger--;
+        this.thirst--;
+        this.drunk--;
+        
         if (this.hunger > 100 || this.thirst > 100) {
+            this.isDead = true;
             return "dead";
         }
         if (this.drunk > 100 && Math.random() < 0.1) {
