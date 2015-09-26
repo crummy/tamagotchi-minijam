@@ -5,6 +5,13 @@ var DANCING_STATE = 4;
 var SHITTING_STATE = 5;
 var SLEEPING_STATE = 6;
 
+// Hamster takes actions:
+//  feed(foodType)
+//  sleep()
+//  toilet()
+//  clubbing()
+//  pet()
+// Food types: burger, beer, quinoa, edamame, sweets, doner
 function Hamster() {
     this._music = null;
     this._food = 0;
