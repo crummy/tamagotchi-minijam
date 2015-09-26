@@ -56,13 +56,28 @@ Hipstergotchi.Game.prototype =
     {
         gameState.tickCount++;
 
-        gameState.hamster.tick();
+        var result = gameState.hamster.tick();
+
+        switch(result)
+        {
+            case HAPPY_STATE:
+                break;
+            case UNHAPPY_STATE:
+                break;
+            case DEAD_STATE:
+                break;
+            case DANCING_STATE:
+                break;
+            case SHITTING_STATE:
+                break;
+            case SLEEPING_STATE:
+                break;
+        }
     },
 
     updateUI: function()
     {
         var tickCounter = document.getElementById("tickCount");
-
         var hungerBar = document.getElementById("hungerBar");
         var happinessBar = document.getElementById("happinessBar");
         var healthBar = document.getElementById("healthBar");
