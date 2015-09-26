@@ -1,31 +1,39 @@
+function randomInt(min,max)
+{
+    return Math.floor(Math.random()*(max-min+1)+min);
+}
+
 function onPet()
 {
-        alert("blah");
+    gameState.hamster.pet();
 }
 
 function onSleep()
 {
-        alert("blah");
+    gameState.hamster.sleep();
 }
 
 function onToilet()
 {
-        alert("blah");
+    gameState.hamster.toilet();
 }
 
 function onClubbing()
 {
-        alert("blah");
+    var chance = randomInt(0,100);
+    var music = (chance < 60) ? indieMusic : popMusic;
+    console.log(music.name);
+
+    gameState.hamster.clubbing(music);
 }
 
 function onBurger()
 {
-        alert("blah");
+    alert("not implemented");
 }
 
 function onVegan()
 {
-        alert("blah");
 }
 
 function onBeer()
