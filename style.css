@@ -21,6 +21,11 @@ background: url(graphics/background_grass.png);
 
 }
 
+#bars {
+	position: absolute;
+	bottom: 30px;
+}
+
 #tickCount {
 	text-align: center;
 }
