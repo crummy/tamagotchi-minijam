@@ -29,34 +29,35 @@ function onClubbing()
 
 function onBurger()
 {
-    alert("not implemented");
+    gameState.hamster.feed(new burger());
 }
 
 function onVegan()
 {
+    gameState.hamster.feed(new waffles());
 }
 
 function onBeer()
 {
-        alert("blah");
+    gameState.hamster.feed(new beer());
 }
 
 function onEdamame()
 {
-        alert("blah");
+    gameState.hamster.feed(new edemame());
 }
 
 function onSweets()
 {
-        alert("blah");
+    gameState.hamster.feed(new sweets());
 }
 
 function onQuinoa()
 {
-        alert("blah");
+    gameState.hamster.feed(new quinoa());
 }
 
 function onDoener()
 {
-        alert("blah");
+    gameState.hamster.feed(new doner());
 }

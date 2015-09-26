@@ -1,0 +1,42 @@
+html {
+	
+}
+body {
+
+	background: url(graphics/background_grass.png);
+	background-repeat: repeat;
+	
+	
+}
+
+#petBnt {
+	background: url(graphics/actions/action_pet.png);
+	background-repeat: no-repeat;
+	width:9.01%;
+	height: 100px;
+	border: 0;
+	background-size: contain;
+	position: relative;
+  	box-sizing: border-box;
+
+}
+
+#sleepBnt {}
+
+#toiletBnt {}
+
+#clubbingBnt {}
+
+#burgerBnt {}
+
+#veganBnt {}
+
+#beerBnt {}
+
+#edamameBnt {}
+
+#sweetsBnt {}
+
+#quinoaBnt {}
+
+#donerBnt {}
