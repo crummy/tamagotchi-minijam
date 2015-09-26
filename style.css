@@ -38,7 +38,7 @@ background: url(graphics/background_grass.png);
 
 #actionBar button{
 	background-repeat: no-repeat;
-	height: 100px;
+	height: 60px;
 	width:7.40%;
   	margin: 1%;
 	border: 0;
