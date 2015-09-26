@@ -1,3 +1,10 @@
+var DEAD_STATE = 1;
+var HAPPY_STATE = 2;
+var UNHAPPY_STATE = 3;
+var DANCING_STATE = 4;
+var SHITTING_STATE = 5;
+var SLEEPING_STATE = 6;
+
 function Hamster() {
     this._food = 0;
     this._maxValue = 100;
@@ -35,6 +42,23 @@ function Hamster() {
     },
     
     this.tick = function() {
+        if (this.state == SLEEPING_STATE) {
+            this.energy += 4;
+            this.health += 3;
+            this.hunger -= 2;
+            if (this.energy < 100) {
+                return SLEEPING_STATE;
+            }
+        }
+        if (this.state == DANCING_STATE) {
+            this.energy -= 2;
+            this.health -= 1;
+            this.hunger -= 1;
+            if (this.energy > 10) {
+                return DANCING_STATE;
+            }
+        }
+        
         if (this.hunger > 0) this.hunger--;
         if (this.energy > 0) this.energy--;
         
@@ -46,6 +70,16 @@ function Hamster() {
         if (this._food > 3) {
             this._food = 0;
             return "shit";
+        }
+        
+        if (this.energy > 75 && Math.random() < 0.1) {
+            this.state = "dancing";
+            return "dancing";
+        }
+        
+        if (this.energy < 15 && Math.random() < 0.1) {
+            this.state = "sleeping";
+            return "dancing";
         }
     }
 }
