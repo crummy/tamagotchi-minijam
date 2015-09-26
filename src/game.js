@@ -131,6 +131,7 @@ Hipstergotchi.Game.prototype =
                 this.hamsterShitting.visible = false;
                 this.hamsterUnhappy.visible = true;
                 this.hamsterSleeping.visible = false;
+                gameState.hamster.health -= 1;
                 break;
             case DEAD_STATE:
                 this.hamsterHappy.visible = false;
@@ -174,7 +175,7 @@ Hipstergotchi.Game.prototype =
         gameState.gameRunning = false;
         var tickCounter = document.getElementById("tickCount");
         tickCounter.style.fontSize = "xx-large";
-        tickCounter.textContent = "Game Over! Score: " + gameState.tickCount;
+        tickCounter.textContent = "It's dead :( You scored points: " + gameState.tickCount;
     },
 
     destroyPoop: function(sprite)
