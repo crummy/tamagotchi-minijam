@@ -22,11 +22,11 @@ Hipstergotchi.Preloader.prototype = {
         this.load.setPreloadSprite(this.preloadBar);
 
         this.load.image('replace', 'gfx/replace.png');
-        this.load.image('guineaPigIdle', 'gfx/guineaPig_eyeclosed_01.png');
+        this.load.spritesheet('guineaPigIdle', 'gfx/guineapig_eyeClosing.png', 160, 160, 3);
         this.load.spritesheet('guineaPigDancing', 'gfx/guineapig_dancing.png', 160, 160, 3);
-        this.load.image('guineaPigNormal', 'gfx/guineaPig_normal_01.png');
-        this.load.image('guineaPigSad', 'gfx/guineapig_sad_01.png');
-        this.load.image('guineaPigSleep', 'gfx/guineapig_sleep_01.png');
+        this.load.spritesheet('guineaPigNormal', 'gfx/guineapig_happy.png', 160, 160, 3);
+        this.load.spritesheet('guineaPigSad', 'gfx/guineapig_sad.png',160, 160, 2);
+        this.load.spritesheet('guineaPigSleep', 'gfx/guineapig_sleep.png', 160, 160, 2);
         this.load.image('guineaPigDead', 'gfx/guineapig_dead.png');
         this.load.image("background", "graphics/background_grass.png");
 
