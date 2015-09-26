@@ -17,7 +17,7 @@ function Hamster() {
     this._food = 0;
     this._maxValue = 100;
     
-    this.hunger = 0;
+    this.hunger = 50;
     this.health = this._maxValue;
     this.energy = this._maxValue;
     
@@ -98,8 +98,10 @@ function Hamster() {
             }
         }
         
-        if (this.hunger > 0) this.hunger--;
+        this.hunger++;
+        if (this.hunger > this._maxValue) this.hunger = this._maxValue;
         if (this.energy > 0) this.energy--;
+        if (this.energy > this._maxValue) this.energy = this._maxValue;
         
         if (this.hunger >= 100 || this.health == 0) {
             return DEAD_STATE;
