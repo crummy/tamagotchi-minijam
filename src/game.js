@@ -123,14 +123,12 @@ Hipstergotchi.Game.prototype =
             unhappyMusic.volume = 0;
             clubMusic.volume = 0;
             happyMusic.volume = 0;
-            return;
-        }
-        if (happyMusic.volume == 0 && unhappyMusic.volume == 0 && result != DANCING_STATE) {
+        } else if (happyMusic.volume == 0 && unhappyMusic.volume == 0 && result != DANCING_STATE) {
             popMusic.volume = 0;
             unhappyMusic.volume = 0;
             clubMusic.volume = 0;
             happyMusic.volume = 1;
-        } if (result == HAPPY_STATE) {
+        } else if (result == HAPPY_STATE) {
             happyMusic.volume = 1;
             unhappyMusic.volume = 0;
         } else if (result == UNHAPPY_STATE) {
