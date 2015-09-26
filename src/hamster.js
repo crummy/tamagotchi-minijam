@@ -66,6 +66,7 @@ function Hamster() {
         } else {
             this.state = DANCING_STATE;
             this._music = music;
+            return true;
         }
     };
     
@@ -107,6 +108,7 @@ function Hamster() {
         
         if (this.hunger >= 100 || this.health <= 0) {
             this.state = DEAD_STATE;
+            game.sound.play("gameover");
             return DEAD_STATE;
         }
         

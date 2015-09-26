@@ -27,11 +27,16 @@ function onClubbing()
     var music = (chance < 60) ? indieMusic : popMusic;
     console.log(music.name);
 
-
     var result = gameState.hamster.clubbing(music);
     if (result) {
         if (music == popMusic) {
-            game.sound.play("popmusic");
+            happyMusic.volume = 0;
+            unhappyMusic.volume = 0;
+            game.sound.play("popmusic").volume = 1;
+        } else {
+            happyMusic.volume = 0;
+            unhappyMusic.volume = 0;
+            game.sound.play("clubbing").volume = 1;
         }
     }
 }

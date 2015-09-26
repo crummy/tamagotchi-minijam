@@ -7,6 +7,7 @@ var gameState = {
 var happyMusic;
 var unhappyMusic;
 var clubMusic;
+var popMusic;
 
 
 Hipstergotchi.Game = function (game) {
@@ -84,9 +85,15 @@ Hipstergotchi.Game.prototype =
         this.hamsterShitting.play('anim', 3, true);
         this.hamsterSleeping.play('anim', 2, true);
         
-        happyMusic = game.add.audio("happy");
-        unhappyMusic = game.add.audio("unhappy");
-        clubMusic = game.add.audio("clubbing");
+        happyMusic = game.add.audio("happy")
+        happyMusic.play();
+        happyMusic.volume = 0;
+        unhappyMusic = game.add.audio("unhappy")
+        unhappyMusic.play();
+        unhappyMusic.volume = 0;
+        clubMusic = game.add.audio("clubbing").play().volume = 0;
+        popMusic = game.add.audio("popmusic").play().volume = 0;
+        
     },
 
     update: function () {
@@ -111,6 +118,25 @@ Hipstergotchi.Game.prototype =
         gameState.tickCount++;
 
         var result = gameState.hamster.tick();
+        if (result == DEAD_STATE) {
+            popMusic.volume = 0;
+            unhappyMusic.volume = 0;
+            clubMusic.volume = 0;
+            happyMusic.volume = 0;
+            return;
+        }
+        if (happyMusic.volume == 0 && unhappyMusic.volume == 0 && result != DANCING_STATE) {
+            popMusic.volume = 0;
+            unhappyMusic.volume = 0;
+            clubMusic.volume = 0;
+            happyMusic.volume = 1;
+        } if (result == HAPPY_STATE) {
+            happyMusic.volume = 1;
+            unhappyMusic.volume = 0;
+        } else if (result == UNHAPPY_STATE) {
+            happyMusic.volume = 0;
+            unhappyMusic.volume = 1;
+        }
 
         console.log(result);
 
