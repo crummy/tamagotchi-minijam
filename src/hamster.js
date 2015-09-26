@@ -73,7 +73,7 @@ function Hamster() {
         if (this.state == DEAD_STATE) return false;
         this.energy += 2;
         this.health++;
-        this.state == HAPPY_STATE;
+        this.state = HAPPY_STATE;
         return true;
     };
     
