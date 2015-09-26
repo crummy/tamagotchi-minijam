@@ -41,7 +41,7 @@ Hipstergotchi.Game.prototype =
 {
     create: function () {
         this.game.stage.backgroundColor = '#6688ee';
-        this.game.time.events.loop(Phaser.Timer.SECOND, this.tick, this);
+        this.game.time.events.loop(Phaser.Timer.SECOND / 2, this.tick, this);
         this.game.add.tileSprite(0, 0, 1000, 600, 'background');
 
         this.hamsterHappy = this.add.sprite(250, 250, 'guineaPigNormal');
@@ -66,10 +66,18 @@ Hipstergotchi.Game.prototype =
         this.hamsterSleeping.visible = false;
 
         this.hamsterDancing.animations.add('anim');
+        this.hamsterHappy.animations.add('anim');
+        this.hamsterDancing.animations.add('anim');
+        this.hamsterUnhappy.animations.add('anim');
+        this.hamsterShitting.animations.add('anim');
+        this.hamsterSleeping.animations.add('anim');
 
         this.hamsterDancing.play('anim', 3, true);
-
-        this.hamsterDancing.play()
+        this.hamsterHappy.play('anim', 3, true);
+        this.hamsterDancing.play('anim', 3, true);
+        this.hamsterUnhappy.play('anim', 2, true);
+        this.hamsterShitting.play('anim', 3, true);
+        this.hamsterSleeping.play('anim', 2, true);
     },
 
     update: function () {
