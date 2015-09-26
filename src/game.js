@@ -44,8 +44,8 @@ Hipstergotchi.Game.prototype =
         this.game.time.events.loop(Phaser.Timer.SECOND, this.tick, this);
 
         this.hamsterHappy = this.add.sprite(250, 250, 'guineaPigNormal');
-        this.hamsterDancing = this.add.sprite(250, 250, 'guineaPigHappy');
-        this.hamsterDead = this.add.sprite(250, 250, 'guineaPigSad');
+        this.hamsterDancing = this.add.sprite(250, 250, 'guineaPigDancing');
+        this.hamsterDead = this.add.sprite(250, 250, 'guineaPigDead');
         this.hamsterShitting = this.add.sprite(250, 250, 'guineaPigShitting');
         this.hamsterUnhappy = this.add.sprite(250, 250, 'guineaPigSad');
         this.hamsterSleeping = this.add.sprite(250, 250, 'guineaPigSleep');
@@ -63,6 +63,12 @@ Hipstergotchi.Game.prototype =
         this.hamsterShitting.visible = false;
         this.hamsterUnhappy.visible = false;
         this.hamsterSleeping.visible = false;
+
+        this.hamsterDancing.animations.add('anim');
+
+        this.hamsterDancing.play('anim', 3, true);
+
+        this.hamsterDancing.play()
     },
 
     update: function () {
