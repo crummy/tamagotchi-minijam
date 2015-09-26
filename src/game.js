@@ -85,6 +85,8 @@ Hipstergotchi.Game.prototype =
 
         var result = gameState.hamster.tick();
 
+        console.log(result);
+
         switch(result)
         {
             case HAPPY_STATE:
