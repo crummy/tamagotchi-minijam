@@ -43,6 +43,8 @@ function Hamster() {
     this.toilet = function() {
         if (this.state == DEAD_STATE || this.state == SLEEPING_STATE || this.state == DANCING_STATE) {
             return false;
+        } else if (this._food == 0) {
+            return false;
         } else {
             this._food = 0;
             this.state = SHITTING_STATE;
