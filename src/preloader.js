@@ -62,6 +62,7 @@ Hipstergotchi.Preloader.prototype = {
         this.load.audio("clubbing", "graphics/hipstergochielectro.mp3");
         this.load.audio("happy", "graphics/hipstergochihappy.mp3");
         this.load.audio("unhappy", "graphics/hipstergochiunhappy.mp3");
+        this.load.audio("gameover", "graphics/hipstergochideath.mp3");
 
     },
 
