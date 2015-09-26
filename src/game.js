@@ -1,3 +1,9 @@
+var gameState = {
+    tickCount: 0,
+    hamster: new Hamster()
+};
+
+
 Hipstergotchi.Game = function (game) {
 
     //  When a State is added to Phaser it automatically has the following properties set on it, even if they already exist:
@@ -24,18 +30,16 @@ Hipstergotchi.Game = function (game) {
 
 };
 
-Hipstergotchi.Game.prototype = {
-
+Hipstergotchi.Game.prototype =
+{
     create: function () {
+        this.game.stage.backgroundColor = '#6688ee';
 
-        this.add.sprite(300, 400, 'replace');
-
+        this.game.time.events.loop(Phaser.Timer.SECOND, this.tick, this);
     },
 
     update: function () {
-
-        //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
-
+        this.updateUI();
     },
 
     quitGame: function (pointer) {
@@ -46,7 +50,42 @@ Hipstergotchi.Game.prototype = {
         //  Then let's go back to the main menu.
         //this.state.start('');
 
-    }
+    },
 
+    tick: function()
+    {
+        gameState.tickCount++;
+
+        var result = gameState.hamster.tick();
+
+        switch(result)
+        {
+            case HAPPY_STATE:
+                break;
+            case UNHAPPY_STATE:
+                break;
+            case DEAD_STATE:
+                break;
+            case DANCING_STATE:
+                break;
+            case SHITTING_STATE:
+                break;
+            case SLEEPING_STATE:
+                break;
+        }
+    },
+
+    updateUI: function()
+    {
+        var tickCounter = document.getElementById("tickCount");
+        var hungerBar = document.getElementById("hungerBar");
+        var happinessBar = document.getElementById("happinessBar");
+        var healthBar = document.getElementById("healthBar");
+
+        tickCounter.textContent = gameState.tickCount;
+        hungerBar.value = gameState.hamster.hunger;
+        happinessBar.value = gameState.hamster.energy;
+        healthBar.value = gameState.hamster.health;
+    }
 };
 
