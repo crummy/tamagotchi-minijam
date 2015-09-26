@@ -3,6 +3,10 @@ var gameState = {
     hamster: new Hamster()
 };
 
+var happyMusic;
+var unhappyMusic;
+var clubMusic;
+
 
 Hipstergotchi.Game = function (game) {
 
@@ -78,6 +82,10 @@ Hipstergotchi.Game.prototype =
         this.hamsterUnhappy.play('anim', 2, true);
         this.hamsterShitting.play('anim', 3, true);
         this.hamsterSleeping.play('anim', 2, true);
+        
+        happyMusic = game.add.audio("happy");
+        unhappyMusic = game.add.audio("unhappy");
+        clubMusic = game.add.audio("clubbing");
     },
 
     update: function () {
