@@ -17,9 +17,10 @@ function Hamster() {
     this._food = 0;
     this._maxValue = 100;
     
-    this.hunger = 0;
+    this.hunger = 50;
     this.health = this._maxValue;
     this.energy = this._maxValue;
+    this.state = HAPPY_STATE;
     
     this.feed = function(food) {
         if (this.state == DEAD_STATE || this.sadness > 100 || this.hunger == 0) {
@@ -72,6 +73,7 @@ function Hamster() {
         if (this.state == DEAD_STATE) return false;
         this.energy += 2;
         this.health++;
+        this.state == HAPPY_STATE;
         return true;
     };
     
@@ -83,29 +85,34 @@ function Hamster() {
         if (this.state == SLEEPING_STATE) {
             this.energy += 4;
             this.health += 3;
-            this.hunger -= 2;
+            this.hunger += 2;
             if (this.energy < 100) {
                 return SLEEPING_STATE;
             }
         }
         if (this.state == DANCING_STATE) {
             this.energy += this._music.energy;
+            if (this.energy > this._maxValue) this.energy = this._maxValue;
             this.health -= 1;
             this.hunger -= 1;
-            if (this.energy > 10 || this.energy < 90) {
+            if (this.health > 20 && this.hunger > 20) {
                 return DANCING_STATE;
             }
         }
         
-        if (this.hunger > 0) this.hunger--;
+        this.hunger++;
+        if (this.hunger > this._maxValue) this.hunger = this._maxValue;
         if (this.energy > 0) this.energy--;
+        if (this.energy > this._maxValue) this.energy = this._maxValue;
         
         if (this.hunger >= 100 || this.health == 0) {
+            this.state = DEAD_STATE;
             return DEAD_STATE;
         }
         
         if (this._food > 3) {
             this._food = 0;
+            this.state = SHITTING_STATE;
             return SHITTING_STATE;
         }
         
@@ -115,18 +122,22 @@ function Hamster() {
             } else {
                 this._music = {energy: -5};
             }
+            this.state = DANCING_STATE;
             return DANCING_STATE;
         }
         
         if (this.energy < 15 && Math.random() < 0.1) {
+            this.state = SLEEPING_STATE;
             return SLEEPING_STATE;
         }
         
         if (this.energy < 40
             || this.health < 40
             || this.hunger < 40) {
+                this.state = UNHAPPY_STATE;
                 return UNHAPPY_STATE;
             } else {
+                this.state = HAPPY_STATE;
                 return HAPPY_STATE;
             }
     };
