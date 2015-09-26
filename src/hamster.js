@@ -94,7 +94,7 @@ function Hamster() {
             this.energy += this._music.energy;
             if (this.energy > this._maxValue) this.energy = this._maxValue;
             this.health -= 1;
-            this.hunger -= 1;
+            this.hunger += 1;
             if (this.health > 20 && this.hunger > 20) {
                 return DANCING_STATE;
             }
