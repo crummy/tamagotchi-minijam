@@ -15,10 +15,9 @@ background: url(graphics/background_grass.png);
 
 #gameContainer {
 	z-index: 0;
-	position: absolute;
+	/*position: absolute;
   	top: 100px;
-  	margin: auto;
-
+*/
 }
 
 #bars {
