@@ -25,6 +25,13 @@ Hipstergotchi.Game = function (game) {
     this.physics;   //  the physics manager (Phaser.Physics)
     this.rnd;       //  the repeatable random number generator (Phaser.RandomDataGenerator)
 
+    this.hamsterHappy = undefined;
+    this.hamsterDancing = undefined;
+    this.hamsterDead = undefined;
+    this.hamsterShitting = undefined;
+    this.hamsterUnhappy = undefined;
+    this.hamsterSleeping = undefined;
+
     //  You can use any of these from any function within this State.
     //  But do consider them as being 'reserved words', i.e. don't create a property for your own game called "world" or you'll over-write the world reference.
 
@@ -34,8 +41,28 @@ Hipstergotchi.Game.prototype =
 {
     create: function () {
         this.game.stage.backgroundColor = '#6688ee';
-
         this.game.time.events.loop(Phaser.Timer.SECOND, this.tick, this);
+
+        this.hamsterHappy = this.add.sprite(250, 250, 'guineaPigNormal');
+        this.hamsterDancing = this.add.sprite(250, 250, 'guineaPigHappy');
+        this.hamsterDead = this.add.sprite(250, 250, 'guineaPigSad');
+        this.hamsterShitting = this.add.sprite(250, 250, 'guineaPigShitting');
+        this.hamsterUnhappy = this.add.sprite(250, 250, 'guineaPigSad');
+        this.hamsterSleeping = this.add.sprite(250, 250, 'guineaPigSleep');
+
+        this.hamsterHappy.anchor.set(0.5,0.5);
+        this.hamsterDancing.anchor.set(0.5,0.5);
+        this.hamsterDead.anchor.set(0.5,0.5);
+        this.hamsterShitting.anchor.set(0.5,0.5);
+        this.hamsterUnhappy.anchor.set(0.5,0.5);
+        this.hamsterSleeping.anchor.set(0.5,0.5);
+
+        this.hamsterHappy.visible = false;
+        this.hamsterDancing.visible = false;
+        this.hamsterDead.visible = false;
+        this.hamsterShitting.visible = false;
+        this.hamsterUnhappy.visible = false;
+        this.hamsterSleeping.visible = false;
     },
 
     update: function () {
@@ -61,16 +88,52 @@ Hipstergotchi.Game.prototype =
         switch(result)
         {
             case HAPPY_STATE:
+                this.hamsterHappy.visible = true;
+                this.hamsterDancing.visible = false;
+                this.hamsterDead.visible = false;
+                this.hamsterShitting.visible = false;
+                this.hamsterUnhappy.visible = false;
+                this.hamsterSleeping.visible = false;
                 break;
             case UNHAPPY_STATE:
+                this.hamsterHappy.visible = false;
+                this.hamsterDancing.visible = false;
+                this.hamsterDead.visible = false;
+                this.hamsterShitting.visible = false;
+                this.hamsterUnhappy.visible = true;
+                this.hamsterSleeping.visible = false;
                 break;
             case DEAD_STATE:
+                this.hamsterHappy.visible = false;
+                this.hamsterDancing.visible = false;
+                this.hamsterDead.visible = true;
+                this.hamsterShitting.visible = false;
+                this.hamsterUnhappy.visible = false;
+                this.hamsterSleeping.visible = false;
                 break;
             case DANCING_STATE:
+                this.hamsterHappy.visible = false;
+                this.hamsterDancing.visible = true;
+                this.hamsterDead.visible = false;
+                this.hamsterShitting.visible = false;
+                this.hamsterUnhappy.visible = false;
+                this.hamsterSleeping.visible = false;
                 break;
             case SHITTING_STATE:
+                this.hamsterHappy.visible = false;
+                this.hamsterDancing.visible = false;
+                this.hamsterDead.visible = false;
+                this.hamsterShitting.visible = true;
+                this.hamsterUnhappy.visible = false;
+                this.hamsterSleeping.visible = false;
                 break;
             case SLEEPING_STATE:
+                this.hamsterHappy.visible = false;
+                this.hamsterDancing.visible = false;
+                this.hamsterDead.visible = false;
+                this.hamsterShitting.visible = false;
+                this.hamsterUnhappy.visible = false;
+                this.hamsterSleeping.visible = true;
                 break;
         }
     },
