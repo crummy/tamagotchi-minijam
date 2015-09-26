@@ -41,6 +41,28 @@ Hipstergotchi.Preloader.prototype = {
         this.load.bitmapFont('caslon', 'fonts/caslon.png', 'fonts/caslon.xml');
         */
         //	+ lots of other required assets here
+        
+        this.load.audio("atmosphere1", "sound/guinea pig1.ogg");
+        this.load.audio("atmosphere2", "sound/guinea pig2.ogg");
+        this.load.audio("atmosphere3", "sound/guinea pig3.ogg");
+        this.load.audio("button1", "sound/button1.ogg");
+        this.load.audio("button2", "sound/button2.ogg");
+        this.load.audio("button3", "sound/button3.ogg");
+        this.load.audio("beer", "sound/drinking1.ogg");
+        this.load.audio("waffles", "sound/eating2.ogg");
+        this.load.audio("burger", "sound/eating3 slurp1.ogg");
+        this.load.audio("edamame", "sound/eating4 crunch.ogg");
+        this.load.audio("sweets", "sound/eating4 crunch.ogg");
+        this.load.audio("doner", "sound/eating2.ogg");
+        this.load.audio("quinoa", "sound/eating11.ogg");
+        this.load.audio("pet", "sound/petting.ogg");
+        this.load.audio("sleep", "sound/sleeping.ogg");
+        this.load.audio("toilet", "sound/toilet.ogg");
+        this.load.audio("popmusic", "sound/pop music.ogg");
+        
+        this.load.audio("clubbing", "graphics/hipstergochielectro.mp3");
+        this.load.audio("happy", "graphics/hipstergochihappy.mp3");
+        this.load.audio("unhappy", "graphics/hipstergochiunhappy.mp3");
 
     },
 

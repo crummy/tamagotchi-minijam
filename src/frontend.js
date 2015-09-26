@@ -5,17 +5,20 @@ function randomInt(min,max)
 
 function onPet()
 {
-    gameState.hamster.pet();
+    var result = gameState.hamster.pet();
+    if (result) game.sound.play("pet");
 }
 
 function onSleep()
 {
-    gameState.hamster.sleep();
+    var result = gameState.hamster.sleep();
+    if (result) game.sound.play("sleep");
 }
 
 function onToilet()
 {
-    gameState.hamster.toilet();
+    var result = gameState.hamster.toilet();
+    if (result) game.sound.play("toilet");
 }
 
 function onClubbing()
@@ -24,40 +27,53 @@ function onClubbing()
     var music = (chance < 60) ? indieMusic : popMusic;
     console.log(music.name);
 
-    gameState.hamster.clubbing(music);
+
+    var result = gameState.hamster.clubbing(music);
+    if (result) {
+        if (music == popMusic) {
+            game.sound.play("popmusic");
+        }
+    }
 }
 
 function onBurger()
 {
-    gameState.hamster.feed(burger);
+    var result = gameState.hamster.feed(burger);
+    if (result) game.sound.play("burger");
 }
 
 function onVegan()
 {
-    gameState.hamster.feed(waffles);
+    var result = gameState.hamster.feed(waffles);
+    if (result) game.sound.play("waffles");
 }
 
 function onBeer()
 {
-    gameState.hamster.feed(beer);
+    var result = gameState.hamster.feed(beer);
+    if (result) game.sound.play("beer");
 }
 
 function onEdamame()
 {
-    gameState.hamster.feed(edamame);
+    var result = gameState.hamster.feed(edamame);
+    if (result) game.sound.play("edamame");
 }
 
 function onSweets()
 {
-    gameState.hamster.feed(sweets);
+    var result = gameState.hamster.feed(sweets);
+    if (result) game.sound.play("sweets");
 }
 
 function onQuinoa()
 {
-    gameState.hamster.feed(quinoa);
+    var result = gameState.hamster.feed(quinoa);
+    if (result) game.sound.play("quinoa");
 }
 
 function onDoener()
 {
-    gameState.hamster.feed(doner);
+    var result = gameState.hamster.feed(doner);
+    if (result) game.sound.play("doner");
 }
