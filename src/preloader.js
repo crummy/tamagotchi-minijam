@@ -41,22 +41,22 @@ Hipstergotchi.Preloader.prototype = {
         */
         //	+ lots of other required assets here
         
-        this.load.audio("atmosphere1", "sound/atmosphere/guinea pig1.wav");
-        this.load.audio("atmosphere2", "sound/atmosphere/guinea pig2.wav");
-        this.load.audio("atmosphere3", "sound/atmosphere/guinea pig3.wav");
-        this.load.audio("button1", "sound/buttons/button1.wav");
-        this.load.audio("button2", "sound/buttons/button2.wav");
-        this.load.audio("button3", "sound/buttons/button3.wav");
-        this.load.audio("beer", "sound/food/drinking1.wav");
-        this.load.audio("waffles", "sound/food/eating2.wav");
-        this.load.audio("burger", "sound/food/eating3 slurp1.wav");
-        this.load.audio("edamame", "sound/food/eating4 crunch.wav");
-        this.load.audio("sweets", "sound/food/eating4 crunch.wav");
-        this.load.audio("doner", "sound/food/eating2.wav");
-        this.load.audio("quinoa", "sound/food/eating11.wav");
-        this.load.audio("pet", "sound/other/petting.wav");
-        this.load.audio("sleep", "sound/other/sleeping.wav");
-        this.load.audio("toilet", "sound/other/toilet.wav");
+        this.load.audio("atmosphere1", "sound/guinea pig1.ogg");
+        this.load.audio("atmosphere2", "sound/guinea pig2.ogg");
+        this.load.audio("atmosphere3", "sound/guinea pig3.ogg");
+        this.load.audio("button1", "sound/button1.ogg");
+        this.load.audio("button2", "sound/button2.ogg");
+        this.load.audio("button3", "sound/button3.ogg");
+        this.load.audio("beer", "sound/drinking1.ogg");
+        this.load.audio("waffles", "sound/eating2.ogg");
+        this.load.audio("burger", "sound/eating3 slurp1.ogg");
+        this.load.audio("edamame", "sound/eating4 crunch.ogg");
+        this.load.audio("sweets", "sound/eating4 crunch.ogg");
+        this.load.audio("doner", "sound/eating2.ogg");
+        this.load.audio("quinoa", "sound/eating11.ogg");
+        this.load.audio("pet", "sound/petting.ogg");
+        this.load.audio("sleep", "sound/sleeping.ogg");
+        this.load.audio("toilet", "sound/toilet.ogg");
 
     },
 
