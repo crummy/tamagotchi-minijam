@@ -116,7 +116,7 @@ function Hamster() {
             return SHITTING_STATE;
         }
         
-        if (this.energy > 75 && Math.random() < 0.1) {
+        if (this.energy > 75 && Math.random() < 0.01 && this.state == HAPPY_STATE) {
             if (Math.random() < 0.5) {
                 this._music = {energy: 3};
             } else {
@@ -126,7 +126,7 @@ function Hamster() {
             return DANCING_STATE;
         }
         
-        if (this.energy < 15 && Math.random() < 0.1) {
+        if (this.energy < 15 && Math.random() < 0.01) {
             this.state = SLEEPING_STATE;
             return SLEEPING_STATE;
         }
