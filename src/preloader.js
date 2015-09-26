@@ -40,6 +40,23 @@ Hipstergotchi.Preloader.prototype = {
         this.load.bitmapFont('caslon', 'fonts/caslon.png', 'fonts/caslon.xml');
         */
         //	+ lots of other required assets here
+        
+        this.load.audio("atmosphere1", "sound/atmosphere/guinea pig1.wav");
+        this.load.audio("atmosphere2", "sound/atmosphere/guinea pig2.wav");
+        this.load.audio("atmosphere3", "sound/atmosphere/guinea pig3.wav");
+        this.load.audio("button1", "sound/buttons/button1.wav");
+        this.load.audio("button2", "sound/buttons/button2.wav");
+        this.load.audio("button3", "sound/buttons/button3.wav");
+        this.load.audio("beer", "sound/food/drinking1.wav");
+        this.load.audio("waffles", "sound/food/eating2.wav");
+        this.load.audio("burger", "sound/food/eating3 slurp1.wav");
+        this.load.audio("edamame", "sound/food/eating4 crunch.wav");
+        this.load.audio("sweets", "sound/food/eating4 crunch.wav");
+        this.load.audio("doner", "sound/food/eating2.wav");
+        this.load.audio("quinoa", "sound/food/eating11.wav");
+        this.load.audio("pet", "sound/other/petting.wav");
+        this.load.audio("sleep", "sound/other/sleeping.wav");
+        this.load.audio("toilet", "sound/other/toilet.wav");
 
     },
 
