@@ -22,6 +22,13 @@ Hipstergotchi.Preloader.prototype = {
         this.load.setPreloadSprite(this.preloadBar);
 
         this.load.image('replace', 'gfx/replace.png');
+        this.load.image('guineaPigIdle', 'gfx/guineaPig_eyeclosed_01.png');
+        this.load.spritesheet('guineaPigDancing', 'gfx/guineapig_dancing.png', 160, 160, 3);
+        this.load.image('guineaPigNormal', 'gfx/guineaPig_normal_01.png');
+        this.load.image('guineaPigSad', 'gfx/guineapig_sad_01.png');
+        this.load.image('guineaPigSleep', 'gfx/guineapig_sleep_01.png');
+        this.load.image('guineaPigDead', 'gfx/guineapig_dead.png');
+        this.load.image("background", "graphics/background_grass.png");
 
         //	Here we load the rest of the assets our game needs.
         //	As this is just a Project Template I've not provided these assets, swap them for your own.
