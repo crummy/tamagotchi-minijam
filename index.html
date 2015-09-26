@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<meta charset="UTF-8">
 <head>
-    <meta charset="UTF-8">
     <script src="src/phaser.js"></script>
     <script src="src/boot.js"></script>
     <script src="src/preloader.js"></script>
+    <script src="src/hamster.js"></script>
     <script src="src/game.js"></script>
+
     <title>Hipstergotchi</title>
 </head>
 <body>
@@ -17,10 +18,12 @@
     </div>
     <br>
     <div id="bars">
-        <div>Hunger <progress id="hunger" value="20" max="100"></progress></div>
-        <div>Thirst <progress id="thirst" value="30" max="100"></progress></div>
-        <div>Entertainment <progress id="entertainment" value="40" max="100"></progress></div>
-        <div>Happiness <progress id="happiness" value="80" max="100"></progress></div>
+        <div>Hunger <progress id="hungerBar" value="20" max="100"></progress></div>
+        <div>Happiness <progress id="happinessBar" value="80" max="100"></progress></div>
+        <div>Health <progress id="healthBar" value="80" max="100"></progress></div>
+        <div>Food <progress id="foodBar" value="80" max="100"></progress></div>
+        <div>Energy <progress id="energyBar" value="80" max="100"></progress></div>
+        <div>Poop <progress id="poopBar" value="80" max="100"></progress></div>
     </div>
     <div id="gameContainer"></div>
 

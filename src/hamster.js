@@ -15,7 +15,7 @@ function Hamster() {
             if (this.hunger < 0) this.hunger = 0;
             return true;
         }
-    }
+    },
     
     this.drink = function() {
         if (this.isDead || this.sadness > 100 || this.thirst == 0) {
@@ -26,25 +26,25 @@ function Hamster() {
             if (this.thirst < 0) this.thirst = 0;
             return true;
         }
-    }
+    },
     
     this.pet = function() {
         this.sadness -= 10;
         if (this.sadness < 0) this.sadness = 0;
         return true;
-    }
+    },
     
     this.slap = function() {
         this.sadness += 10;
         return true;
-    }
+    },
     
     this.isUnhappy = function() {
         return this.hunger > 50
           || this.drunk > 50
           || this.thirst > 50
           || this.sadness > 50;
-    }
+    },
     
     this.tick = function() {
         this.sadness++;

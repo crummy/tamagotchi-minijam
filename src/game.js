@@ -1,11 +1,6 @@
 var gameState = {
     tickCount: 0,
-
-    hamster: {
-        hunger: 0,
-        thirst: 0,
-        happiness: 0
-    }
+    hamster: new Hamster()
 };
 
 
@@ -65,12 +60,21 @@ Hipstergotchi.Game.prototype =
     updateUI: function()
     {
         var tickCounter = document.getElementById("tickCount");
-        var happyBar = document.getElementById("happiness");
+
+        var hungerBar = document.getElementById("hungerBar");
+        var happinessBar = document.getElementById("happinessBar");
+        var healthBar = document.getElementById("healthBar");
+        var foodBar = document.getElementById("foodBar");
+        var energyBar = document.getElementById("energyBar");
+        var poopBar = document.getElementById("poopBar");
 
         tickCounter.textContent = gameState.tickCount;
-        happyBar.value = gameState.hamster.happiness;
-
-
+        hungerBar.value = gameState.hamster.hunger;
+        happinessBar.value = gameState.hamster.happiness;
+        healthBar.value = gameState.hamster.health;
+        foodBar.value = gameState.hamster.food;
+        energyBar.value = gameState.hamster.energy;
+        poopBar.value = gameState.hamster.poop;
     }
 };
 
