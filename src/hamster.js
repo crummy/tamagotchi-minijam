@@ -45,17 +45,22 @@ function Hamster() {
           || this.thirst > 50
           || this.sadness > 50;
     }
-   
     
     this.tick = function() {
         this.sadness++;
-        this.hunger--;
-        this.thirst--;
-        this.drunk--;
+        if (this.hunger > 0) this.hunger--;
+        if (this.thirst > 0) this.thirst--;
+        if (this.drunk > 0) this.drunk--;
         
         if (this.hunger > 100 || this.thirst > 100) {
             this.isDead = true;
             return "dead";
+        }
+        if (this.thirst > 30) {
+            this.sadness++;
+        }
+        if (this.hunger > 30) {
+            this.sadness++;
         }
         if (this.drunk > 100 && Math.random() < 0.1) {
             this.drunk = 0;
