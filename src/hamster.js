@@ -1,73 +1,44 @@
 function Hamster() {
     this.hunger = 0;
-    this.drunk = 0;
-    this.thirst = 0;
-    this.food = 0;
-    this.sadness = 0;
+    this.health = 100;
+    this.energy = 100;
     this.isDead = false;
+    
+    this._food = 0;
     
     this.feed = function() {
         if (this.isDead || this.sadness > 100 || this.hunger == 0) {
             return false;
         } else {
-            this.food += 10;
+            this._food++;
             this.hunger -= 10;
             if (this.hunger < 0) this.hunger = 0;
             return true;
         }
     }
     
-    this.drink = function() {
-        if (this.isDead || this.sadness > 100 || this.thirst == 0) {
-            return false;
-        } else {
-            this.drunk += 10;
-            this.thirst -= 10;
-            if (this.thirst < 0) this.thirst = 0;
-            return true;
-        }
-    }
-    
     this.pet = function() {
-        this.sadness -= 10;
-        if (this.sadness < 0) this.sadness = 0;
-        return true;
-    }
-    
-    this.slap = function() {
-        this.sadness += 10;
+        this.energy += 2;
+        this.health++;
         return true;
     }
     
     this.isUnhappy = function() {
         return this.hunger > 50
-          || this.drunk > 50
-          || this.thirst > 50
-          || this.sadness > 50;
+          || this.health < 50
+          || this.energy < 25;
     }
     
     this.tick = function() {
         this.sadness++;
         if (this.hunger > 0) this.hunger--;
-        if (this.thirst > 0) this.thirst--;
-        if (this.drunk > 0) this.drunk--;
         
         if (this.hunger > 100 || this.thirst > 100) {
             this.isDead = true;
             return "dead";
         }
-        if (this.thirst > 30) {
-            this.sadness++;
-        }
-        if (this.hunger > 30) {
-            this.sadness++;
-        }
-        if (this.drunk > 100 && Math.random() < 0.1) {
-            this.drunk = 0;
-            return "vomit";
-        }
-        if (this.food > 100 && Math.random() < 0.1) {
-            this.food = 0;
+        if (this._food > 3) {
+            this._food = 0;
             return "shit";
         }
     }
