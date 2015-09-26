@@ -9,8 +9,14 @@ body {
 	
 }
 
-#petBnt {
-	background: url(graphics/actions/action_pet.png);
+#actionBar {
+	width: 100%;
+	position: relative;
+	display: flex;
+
+}
+
+#actionBar button{
 	background-repeat: no-repeat;
 	width:9.01%;
 	height: 100px;
@@ -18,25 +24,59 @@ body {
 	background-size: contain;
 	position: relative;
   	box-sizing: border-box;
+}
+
+#petBnt {
+	background: url(graphics/actions/action_pet.png);
 
 }
 
-#sleepBnt {}
+#sleepBnt {
+	background: url(graphics/actions/action_pet.png);
 
-#toiletBnt {}
+}
 
-#clubbingBnt {}
+#toiletBnt {
+	background: url(graphics/actions/action_toilet.png);
 
-#burgerBnt {}
+}
 
-#veganBnt {}
+#clubbingBnt {
+	background: url(graphics/actions/action_clubbing.png);
 
-#beerBnt {}
+}
 
-#edamameBnt {}
+#burgerBnt {
+	background: url(graphics/actions/action_burger.png);
 
-#sweetsBnt {}
+}
 
-#quinoaBnt {}
+#veganBnt {
+	background: url(graphics/actions/action_corn.png);
 
-#donerBnt {}
+}
+
+#beerBnt {
+	background: url(graphics/actions/action_beer.png);
+
+}
+
+#edamameBnt {
+	background: url(graphics/actions/action_edamame.png);
+
+}
+
+#sweetsBnt {
+	background: url(graphics/actions/action_sweets.png);
+
+}
+
+#quinoaBnt {
+	background: url(graphics/actions/action_quinoa.png);
+
+}
+
+#donerBnt {
+	background: url(graphics/actions/action_pet.png);
+
+}
