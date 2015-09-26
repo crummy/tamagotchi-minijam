@@ -101,6 +101,7 @@ function Hamster() {
         }
         
         this.hunger++;
+        this.health--;
         if (this.energy > 0) this.energy--;
         if (this.energy > this._maxValue) this.energy = this._maxValue;
         
