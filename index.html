@@ -14,7 +14,6 @@
     <title>Hipstergotchi</title>
 </head>
 <body>
-    <div id="tickCount">1337</div>
     <div id="actionBar">
         <button id="petBnt" onclick="onPet()"><span>Pet</span></button>
         <button id="sleepBnt" onclick="onSleep()"><span>Sleep</span></button>
@@ -29,13 +28,16 @@
         <button id="quinoaBnt" onclick="onQuinoa()"><span>Quinoa</span></button>
         <button id="donerBnt" onclick="onDoener()"><span>Döner</span></button>
     </div>
+    <div id="tickCount">1337</div>
     <br>
+    <div id="gameContainer"></div>
+    <br>
+
     <div id="bars">
         <div>Hunger <progress id="hungerBar" value="20" max="100"></progress></div>
         <div>Happiness <progress id="happinessBar" value="80" max="100"></progress></div>
         <div>Health <progress id="healthBar" value="80" max="100"></progress></div>
     </div>
-    <div id="gameContainer"></div>
 
     <script type="text/javascript">
 
