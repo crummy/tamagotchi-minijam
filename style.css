@@ -18,12 +18,19 @@ body {
 
 #actionBar button{
 	background-repeat: no-repeat;
-	width:9.01%;
 	height: 100px;
+	width:6.70%;
+  	margin: 1%;
 	border: 0;
 	background-size: contain;
 	position: relative;
   	box-sizing: border-box;
+  	
+}
+
+
+#actionBar button span{
+	display: none;
 }
 
 #petBnt {
