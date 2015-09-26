@@ -30,6 +30,7 @@ Hipstergotchi.Preloader.prototype = {
         this.load.spritesheet('guineaPigShitting', 'gfx/guineapig_pooping.png', 160, 160, 3);
         this.load.image('guineaPigDead', 'gfx/guineapig_dead.png');
         this.load.image("background", "graphics/background_grass.png");
+        this.load.image("poop", "gfx/poop.png");
 
         //	Here we load the rest of the assets our game needs.
         //	As this is just a Project Template I've not provided these assets, swap them for your own.

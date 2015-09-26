@@ -1,5 +1,6 @@
 var gameState = {
     tickCount: 0,
+    gameRunning: true,
     hamster: new Hamster()
 };
 
@@ -81,6 +82,7 @@ Hipstergotchi.Game.prototype =
     },
 
     update: function () {
+        if(gameState.gameRunning == false) return;
         this.updateUI();
     },
 
@@ -96,6 +98,8 @@ Hipstergotchi.Game.prototype =
 
     tick: function()
     {
+        if(gameState.gameRunning == false) return;
+
         gameState.tickCount++;
 
         var result = gameState.hamster.tick();
@@ -127,6 +131,7 @@ Hipstergotchi.Game.prototype =
                 this.hamsterShitting.visible = false;
                 this.hamsterUnhappy.visible = false;
                 this.hamsterSleeping.visible = false;
+                this.onGameOver();
                 break;
             case DANCING_STATE:
                 this.hamsterHappy.visible = false;
@@ -143,6 +148,7 @@ Hipstergotchi.Game.prototype =
                 this.hamsterShitting.visible = true;
                 this.hamsterUnhappy.visible = false;
                 this.hamsterSleeping.visible = false;
+                this.addShit();
                 break;
             case SLEEPING_STATE:
                 this.hamsterHappy.visible = false;
@@ -153,6 +159,32 @@ Hipstergotchi.Game.prototype =
                 this.hamsterSleeping.visible = true;
                 break;
         }
+    },
+
+    onGameOver: function()
+    {
+        gameState.gameRunning = false;
+        var tickCounter = document.getElementById("tickCount");
+        tickCounter.style.fontSize = "xx-large";
+        tickCounter.textContent = "Game Over! Score: " + gameState.tickCount;
+    },
+
+    destroyPoop: function(sprite)
+    {
+        gameState.tickCount += 10;
+        sprite.destroy();
+    },
+
+    addShit: function()
+    {
+        var x = randomInt(0,500);
+        var y = randomInt(0,500);
+
+        var poop = this.add.sprite(x, y, 'poop');
+        poop.anchor.set(0.5,0.5);
+        poop.inputEnabled = true;
+        poop.input.useHandCursor = true; //if you want a hand cursor
+        poop.events.onInputDown.add(this.destroyPoop, this);
     },
 
     updateUI: function()
